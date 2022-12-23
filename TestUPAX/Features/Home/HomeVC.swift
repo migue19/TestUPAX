@@ -154,10 +154,19 @@ extension HomeVC: HomeViewProtocol {
     func showData(data: WeatherResponse) {
         print(data)
         descriptionCard.text = data.weather?.first?.desc
-        numberCard.text = "\(data.main?.temp ?? 0) ºc"
+        
+        let temp = getCelsius(valueInKelvin: data.main?.temp)
+        numberCard.text = String(format:"%0.2f ºc", temp)
         locationManager = nil
     }
     
+    func getCelsius(valueInKelvin: Double?) -> Double {
+        if let kelvin = valueInKelvin {
+            return kelvin - 273.15
+        } else {
+            return 0
+        }
+    }
 }
 
 extension HomeVC: CLLocationManagerDelegate {

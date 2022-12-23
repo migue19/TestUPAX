@@ -14,9 +14,12 @@ class RegisterPresenter {
     var router: RegisterRouterProtocol?
 }
 extension RegisterPresenter: RegisterPresenterProtocol {
-    func tapContinueAction() {
-        interactor?.saveInfo()
+    func tapContinueAction(data: UserData) {
+        interactor?.saveInfo(data: data)
     }
 }
 extension RegisterPresenter: RegisterInteractorOutputProtocol {
+    func goToHome() {
+        router?.showHome()
+    }
 }

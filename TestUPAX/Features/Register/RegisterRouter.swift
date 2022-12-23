@@ -22,4 +22,8 @@ class RegisterRouter {
     }
 }
 extension RegisterRouter: RegisterRouterProtocol {
+    func showHome() {
+        let home = HomeRouter()
+        self.view.navigationController?.pushViewController(home.view, animated: true)
+    }
 }

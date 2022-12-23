@@ -10,7 +10,9 @@ class RegisterInteractor {
     var presenter: RegisterInteractorOutputProtocol?
 }
 extension RegisterInteractor: RegisterInteractorInputProtocol {
-    func saveInfo() {
-        
+    func saveInfo(data: UserData) {
+        PersistenceManager.deleteInfoUserDefaults(key: PersistenceManagerKey.userData)
+        PersistenceManager.saveEntity(data: data, key: PersistenceManagerKey.userData)
+        presenter?.goToHome()
     }
 }

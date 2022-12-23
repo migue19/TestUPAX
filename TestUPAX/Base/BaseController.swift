@@ -47,4 +47,11 @@ class BaseController: UIViewController {
         config.preferredStatusBarStyle = .lightContent
         return config
     }
+    
+    func getName() -> String {
+        guard let entity = PersistenceManager.getEntity(type: UserData.self, key: PersistenceManagerKey.userData) else {
+            return ""
+        }
+        return "\(entity.name) \(entity.paternalLastName)"
+    }
 }

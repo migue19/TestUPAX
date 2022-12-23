@@ -26,6 +26,7 @@
 		F2B747A029562BEA000F5DB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7479F29562BEA000F5DB5 /* Constants.swift */; };
 		F2B747A329562E27000F5DB5 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A229562E27000F5DB5 /* BaseController.swift */; };
 		F2B747A629562E64000F5DB5 /* ProgressViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A529562E64000F5DB5 /* ProgressViewCustom.swift */; };
+		F2B747A8295630E8000F5DB5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F2B7479F29562BEA000F5DB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F2B747A229562E27000F5DB5 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		F2B747A529562E64000F5DB5 /* ProgressViewCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewCustom.swift; sourceTree = "<group>"; };
+		F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				F2B747A529562E64000F5DB5 /* ProgressViewCustom.swift */,
+				F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				F20D43CC29560A9200FBDDF3 /* HomeRouter.swift in Sources */,
 				F2B7479729562804000F5DB5 /* RegisterPresenter.swift in Sources */,
 				F20D43CD29560A9200FBDDF3 /* HomeInteractor.swift in Sources */,
+				F2B747A8295630E8000F5DB5 /* PersistenceManager.swift in Sources */,
 				F2B7479929562804000F5DB5 /* RegisterInteractor.swift in Sources */,
 				F20D43CE29560A9200FBDDF3 /* HomeProtocol.swift in Sources */,
 				F20D43AF29560A4C00FBDDF3 /* AppDelegate.swift in Sources */,

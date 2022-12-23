@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class RegisterVC: UIViewController {
+class RegisterVC: BaseController {
     var presenter: RegisterPresenterProtocol?
     let margin: CGFloat = 16
     let options = ["Hombre", "Mujer"]
+    var currentGender: Gender = .male
     
     lazy var titleLabel: UILabel = {
         var label = UILabel()
@@ -120,8 +121,7 @@ class RegisterVC: UIViewController {
         setupView()
     }
     
-    @objc func segmentedControlDidChange() {
-    }
+    
     
     func setupView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -211,16 +211,23 @@ class RegisterVC: UIViewController {
         dismissKeyboard()
     }
     
+    @objc func segmentedControlDidChange() {
+        let index = segmentedControl.selectedSegmentIndex
+        let gender = Gender(rawValue: index) ?? .male
+        currentGender = gender
+    }
+    
     @objc func continueAction() {
         guard let name = userTxt.text, !name.isEmpty,
               let paternalLastName = lastNameTxt.text, !paternalLastName.isEmpty,
               let maternalLastName = lastName2Txt.text, !maternalLastName.isEmpty,
               let birthday = dateTxt.text, !birthday.isEmpty
         else {
+            showMessage(message: "Los datos son obligatorios", type: .error)
             return
         }
-        let data = UserData(name: name, paternalLastName: paternalLastName, maternalLastName: maternalLastName, gender: .male, birthday: birthday)
-        presenter?.tapContinueAction()
+        let data = UserData(name: name, paternalLastName: paternalLastName, maternalLastName: maternalLastName, gender: currentGender, birthday: birthday)
+        presenter?.tapContinueAction(data: data)
     }
 }
 /// Protocolo para recibir datos del presenter.

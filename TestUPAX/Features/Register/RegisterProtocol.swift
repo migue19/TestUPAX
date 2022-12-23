@@ -13,18 +13,20 @@ protocol RegisterViewProtocol {
 /// Protocolo que define los métodos y atributos para el routing de Register
 /// PRESENTER -> ROUTING
 protocol RegisterRouterProtocol {
+    func showHome()
 }
 /// Protocolo que define los métodos y atributos para el Presenter de Register
 /// VIEW -> PRESENTER
 protocol RegisterPresenterProtocol {
-    func tapContinueAction()
+    func tapContinueAction(data: UserData)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de Register
 /// PRESENTER -> INTERACTOR
 protocol RegisterInteractorInputProtocol {
-    func saveInfo()
+    func saveInfo(data: UserData)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de Register
 /// INTERACTOR -> PRESENTER
 protocol RegisterInteractorOutputProtocol {
+    func goToHome()
 }

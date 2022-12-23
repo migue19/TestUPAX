@@ -7,4 +7,6 @@ target 'TestUPAX' do
 
   # Pods for TestUPAX
   pod 'ConnectionLayer'
+  pod 'SwiftMessages'
+  pod 'lottie-ios'
 end

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.overrideUserInterfaceStyle = .light
-        let login = HomeRouter()
+        let login = RegisterRouter()
         let navigation = UINavigationController(rootViewController: login.view)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

@@ -1,16 +1,26 @@
 PODS:
   - ConnectionLayer (0.0.3)
+  - lottie-ios (3.5.0)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
 
 DEPENDENCIES:
   - ConnectionLayer
+  - lottie-ios
+  - SwiftMessages
 
 SPEC REPOS:
   trunk:
     - ConnectionLayer
+    - lottie-ios
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   ConnectionLayer: 1993c356ebc8d7c99ef59f9a89822d5d21dd360f
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: d4bf534a2caa72288a995167041d351fc287c3e2
+PODFILE CHECKSUM: d7867bb824252d8cb81c0fab1a78c036a5239352
 
 COCOAPODS: 1.11.3

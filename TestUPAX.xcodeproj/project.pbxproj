@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		243C5F7B3C74CAA5A9EAB2A1 /* Pods_TestUPAX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7A0630038F7F84A4083493 /* Pods_TestUPAX.framework */; };
 		F20D43AF29560A4C00FBDDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D43AE29560A4C00FBDDF3 /* AppDelegate.swift */; };
 		F20D43B329560A4C00FBDDF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D43B229560A4C00FBDDF3 /* ViewController.swift */; };
 		F20D43B829560A4E00FBDDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20D43B729560A4E00FBDDF3 /* Assets.xcassets */; };
@@ -16,9 +17,13 @@
 		F20D43CD29560A9200FBDDF3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D43C729560A9200FBDDF3 /* HomeInteractor.swift */; };
 		F20D43CE29560A9200FBDDF3 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D43C829560A9200FBDDF3 /* HomeProtocol.swift */; };
 		F20D43CF29560A9200FBDDF3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D43C929560A9200FBDDF3 /* HomeVC.swift */; };
+		F2B7478E29561E1D000F5DB5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7478D29561E1D000F5DB5 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A7A0630038F7F84A4083493 /* Pods_TestUPAX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestUPAX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25C36D0036FAC7550BF8879D /* Pods-TestUPAX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUPAX.debug.xcconfig"; path = "Target Support Files/Pods-TestUPAX/Pods-TestUPAX.debug.xcconfig"; sourceTree = "<group>"; };
+		EF13B413E1DCE3502ECA0C34 /* Pods-TestUPAX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUPAX.release.xcconfig"; path = "Target Support Files/Pods-TestUPAX/Pods-TestUPAX.release.xcconfig"; sourceTree = "<group>"; };
 		F20D43AB29560A4C00FBDDF3 /* TestUPAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUPAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20D43AE29560A4C00FBDDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F20D43B229560A4C00FBDDF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		F20D43C729560A9200FBDDF3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		F20D43C829560A9200FBDDF3 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		F20D43C929560A9200FBDDF3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F2B7478D29561E1D000F5DB5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243C5F7B3C74CAA5A9EAB2A1 /* Pods_TestUPAX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF39E554E2E1BE852E3D697B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A7A0630038F7F84A4083493 /* Pods_TestUPAX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F20D43A229560A4C00FBDDF3 = {
 			isa = PBXGroup;
 			children = (
 				F20D43AD29560A4C00FBDDF3 /* TestUPAX */,
 				F20D43AC29560A4C00FBDDF3 /* Products */,
+				FC7F1BAB60A5516E24EFEFF0 /* Pods */,
+				DF39E554E2E1BE852E3D697B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F20D43AE29560A4C00FBDDF3 /* AppDelegate.swift */,
+				F2B7478C29561DF1000F5DB5 /* Extensions */,
 				F20D43C229560A7400FBDDF3 /* Features */,
 				F20D43B229560A4C00FBDDF3 /* ViewController.swift */,
 				F20D43B729560A4E00FBDDF3 /* Assets.xcassets */,
@@ -92,6 +110,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F2B7478C29561DF1000F5DB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7478D29561E1D000F5DB5 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC7F1BAB60A5516E24EFEFF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25C36D0036FAC7550BF8879D /* Pods-TestUPAX.debug.xcconfig */,
+				EF13B413E1DCE3502ECA0C34 /* Pods-TestUPAX.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F20D43BF29560A4E00FBDDF3 /* Build configuration list for PBXNativeTarget "TestUPAX" */;
 			buildPhases = (
+				B4CC622A472869E89330C861 /* [CP] Check Pods Manifest.lock */,
 				F20D43A729560A4C00FBDDF3 /* Sources */,
 				F20D43A829560A4C00FBDDF3 /* Frameworks */,
 				F20D43A929560A4C00FBDDF3 /* Resources */,
+				324CFC67D8AE20EB61FF2DB4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +165,7 @@
 				};
 			};
 			buildConfigurationList = F20D43A629560A4C00FBDDF3 /* Build configuration list for PBXProject "TestUPAX" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -157,11 +194,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		324CFC67D8AE20EB61FF2DB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestUPAX/Pods-TestUPAX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestUPAX/Pods-TestUPAX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestUPAX/Pods-TestUPAX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4CC622A472869E89330C861 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestUPAX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F20D43A729560A4C00FBDDF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B7478E29561E1D000F5DB5 /* UIView.swift in Sources */,
 				F20D43CB29560A9200FBDDF3 /* HomePresenter.swift in Sources */,
 				F20D43CF29560A9200FBDDF3 /* HomeVC.swift in Sources */,
 				F20D43CC29560A9200FBDDF3 /* HomeRouter.swift in Sources */,
@@ -302,6 +382,7 @@
 		};
 		F20D43C029560A4E00FBDDF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25C36D0036FAC7550BF8879D /* Pods-TestUPAX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,8 +394,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +411,7 @@
 		};
 		F20D43C129560A4E00FBDDF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF13B413E1DCE3502ECA0C34 /* Pods-TestUPAX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,8 +423,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

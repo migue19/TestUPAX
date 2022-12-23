@@ -50,6 +50,12 @@ class HomeVC: BaseController {
         return label
     }()
     
+    lazy var imageCard: UIImageView = {
+        var image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     lazy var descriptionCard: UILabel = {
         var label = UILabel()
         label.text = "Parciality Cloudy"
@@ -109,7 +115,7 @@ class HomeVC: BaseController {
     }
     
     func addSubviews() {
-        cardView.addSubviews(titleCard, numberCard, descriptionCard)
+        cardView.addSubviews(titleCard, numberCard, descriptionCard, imageCard)
         self.view.addSubviews(titleLabel, yourLocationLabel, locationLabel, cardView, mapKit)
     }
     
@@ -130,6 +136,9 @@ class HomeVC: BaseController {
         cardView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         cardView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        imageCard.centerYAnchor.constraint(equalTo: self.cardView.centerYAnchor).isActive = true
+        imageCard.leftAnchor.constraint(equalTo: self.cardView.leftAnchor, constant: 16).isActive = true
         
         titleCard.topAnchor.constraint(equalTo: self.cardView.topAnchor, constant: 16).isActive = true
         titleCard.rightAnchor.constraint(equalTo: self.cardView.rightAnchor, constant: -16).isActive = true
@@ -152,11 +161,12 @@ class HomeVC: BaseController {
 /// Protocolo para recibir datos del presenter.
 extension HomeVC: HomeViewProtocol {
     func showData(data: WeatherResponse) {
-        print(data)
+        let icon = data.weather?.first?.icon ?? "10d"
         descriptionCard.text = data.weather?.first?.desc
         
         let temp = getCelsius(valueInKelvin: data.main?.temp)
         numberCard.text = String(format:"%0.2f ºc", temp)
+        imageCard.downloaded(from: "http://openweathermap.org/img/wn/\(icon)@2x.png")
         locationManager = nil
     }
     
@@ -219,5 +229,26 @@ extension MKMapView {
             latitudinalMeters: regionRadius,
             longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
+    }
+}
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
     }
 }

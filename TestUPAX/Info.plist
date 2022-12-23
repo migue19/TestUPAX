@@ -6,5 +6,10 @@
 	<string>La app necesita acceder a tu location</string>
 	<key>NSLocationUsageDescription</key>
 	<string>test app</string>
+    <key>NSAppTransportSecurity</key>
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
 </dict>
 </plist>

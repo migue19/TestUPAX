@@ -59,6 +59,6 @@ class BaseController: UIViewController {
         guard let entity = PersistenceManager.getEntity(type: UserData.self, key: PersistenceManagerKey.userData) else {
             return .black
         }
-        return entity.gender == .male ? UIColor.blue : UIColor.systemPink
+        return entity.gender == .male ? UIColor(red: 115/255, green: 141/255, blue: 194/255, alpha: 1) : UIColor(red: 199/255, green: 133/255, blue: 199/255, alpha: 1)
     }
 }

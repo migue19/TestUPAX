@@ -157,10 +157,42 @@
             filePath = "TestUPAX/Features/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "showData(data:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0F034E2-5F7E-4905-8832-8172B64332EA - 956531cfc9b5adbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestUPAX.HomeVC.showData(data: TestUPAX.WeatherResponse) -&gt; ()"
+                  moduleName = "TestUPAX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miguelmexicanoherrera/Desktop/TestUPAX/TestUPAX/Features/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "C0F034E2-5F7E-4905-8832-8172B64332EA - 956531cfc9b5adbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestUPAX.HomeVC.showData(data: TestUPAX.WeatherResponse) -&gt; ()"
+                  moduleName = "TestUPAX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miguelmexicanoherrera/Desktop/TestUPAX/TestUPAX/Features/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -173,8 +205,24 @@
             filePath = "TestUPAX/Features/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "showData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD1450B3-B285-472A-9735-7799AE245156"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestUPAX/Features/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "showData(data:)"
             landmarkType = "7">
          </BreakpointContent>

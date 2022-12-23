@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct OpenWeather {
+struct Endpoints {
+    static var apiKey: String {
+        return "3f1f490f46fbd48f90fbd64c39da2e60"
+    }
     static var url: String {
-        return "https://api.openweathermap.org/data/2.5/weather?lat=%7Blat%7D&lon=%7Blon%7D&appid={Apikey}"
+        return "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=" + apiKey
     }
 }

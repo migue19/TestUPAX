@@ -54,4 +54,11 @@ class BaseController: UIViewController {
         }
         return "\(entity.name) \(entity.paternalLastName)"
     }
+    
+    func getColor() -> UIColor {
+        guard let entity = PersistenceManager.getEntity(type: UserData.self, key: PersistenceManagerKey.userData) else {
+            return .black
+        }
+        return entity.gender == .male ? UIColor.blue : UIColor.systemPink
+    }
 }

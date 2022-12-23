@@ -12,7 +12,7 @@ import MapKit
 
 class HomeVC: BaseController {
     var presenter: HomePresenterProtocol?
-    var locationManager = CLLocationManager()
+    var locationManager: CLLocationManager?
     var authStatus = CLAuthorizationStatus.notDetermined
     
     lazy var mapKit: MKMapView = {
@@ -28,6 +28,44 @@ class HomeVC: BaseController {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var titleCard: UILabel = {
+        var label = UILabel()
+        label.text = "Florida, USA"
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textAlignment = .right
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var numberCard: UILabel = {
+        var label = UILabel()
+        label.text = "27ºc"
+        label.font = .boldSystemFont(ofSize: 40)
+        label.textAlignment = .right
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var descriptionCard: UILabel = {
+        var label = UILabel()
+        label.text = "Parciality Cloudy"
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textAlignment = .right
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var cardView: UIView = {
+        var view = UIView()
+        view.backgroundColor = getColor()
+        view.layer.cornerRadius = 16
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var yourLocationLabel: UILabel = {
@@ -57,11 +95,11 @@ class HomeVC: BaseController {
     
     func getCurrentLocation() {
         locationManager = CLLocationManager()
-        locationManager.delegate = self
+        locationManager?.delegate = self
         if authStatus == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
+            locationManager?.requestWhenInUseAuthorization()
         }
-        locationManager.startUpdatingLocation()
+        locationManager?.startUpdatingLocation()
     }
     
     func setupView() {
@@ -71,7 +109,8 @@ class HomeVC: BaseController {
     }
     
     func addSubviews() {
-        self.view.addSubviews(titleLabel, yourLocationLabel, locationLabel, mapKit)
+        cardView.addSubviews(titleCard, numberCard, descriptionCard)
+        self.view.addSubviews(titleLabel, yourLocationLabel, locationLabel, cardView, mapKit)
     }
     
     func setupConstraints() {
@@ -87,7 +126,24 @@ class HomeVC: BaseController {
         locationLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         locationLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
         
-        mapKit.topAnchor.constraint(equalTo: self.locationLabel.bottomAnchor, constant: 16).isActive = true
+        cardView.topAnchor.constraint(equalTo: self.locationLabel.bottomAnchor, constant: 16).isActive = true
+        cardView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
+        cardView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
+        cardView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        titleCard.topAnchor.constraint(equalTo: self.cardView.topAnchor, constant: 16).isActive = true
+        titleCard.rightAnchor.constraint(equalTo: self.cardView.rightAnchor, constant: -16).isActive = true
+        titleCard.leftAnchor.constraint(equalTo: self.cardView.leftAnchor, constant: 16).isActive = true
+        
+        numberCard.topAnchor.constraint(equalTo: self.titleCard.bottomAnchor, constant: 16).isActive = true
+        numberCard.rightAnchor.constraint(equalTo: self.cardView.rightAnchor, constant: -16).isActive = true
+        numberCard.leftAnchor.constraint(equalTo: self.cardView.leftAnchor, constant: 16).isActive = true
+        
+        descriptionCard.topAnchor.constraint(equalTo: self.numberCard.bottomAnchor, constant: 16).isActive = true
+        descriptionCard.rightAnchor.constraint(equalTo: self.cardView.rightAnchor, constant: -16).isActive = true
+        descriptionCard.leftAnchor.constraint(equalTo: self.cardView.leftAnchor, constant: 16).isActive = true
+        
+        mapKit.topAnchor.constraint(equalTo: self.cardView.bottomAnchor, constant: 16).isActive = true
         mapKit.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         mapKit.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
         mapKit.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -95,18 +151,28 @@ class HomeVC: BaseController {
 }
 /// Protocolo para recibir datos del presenter.
 extension HomeVC: HomeViewProtocol {
+    func showData(data: WeatherResponse) {
+        print(data)
+        descriptionCard.text = data.weather?.first?.desc
+        numberCard.text = "\(data.main?.temp ?? 0) ºc"
+        locationManager = nil
+    }
+    
 }
 
 extension HomeVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        updateMap(latitude: locValue.latitude, longitude: locValue.longitude)
-        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        let latitude = locValue.latitude
+        let longitude = locValue.longitude
+        updateMap(latitude: latitude, longitude: longitude)
+        let location = CLLocation(latitude: latitude, longitude: longitude)
         getPlaceMark(location: location)
+        getWeather(latitude: latitude, longitude: longitude)
     }
     
-    func getWeather(latitude: String, longitude: String) {
-        
+    func getWeather(latitude: Double, longitude: Double) {
+        presenter?.getWeather(latitude: latitude, longitude: longitude)
     }
     
     func getPlaceMark(location: CLLocation) {
@@ -125,6 +191,7 @@ extension HomeVC: CLLocationManagerDelegate {
     func generateLocationText(city: String, country: String) {
         let location = "\(city), \(country)"
         locationLabel.text = location
+        titleCard.text = location
     }
     
     func updateMap(latitude: Double, longitude: Double) {

@@ -27,6 +27,10 @@
 		F2B747A329562E27000F5DB5 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A229562E27000F5DB5 /* BaseController.swift */; };
 		F2B747A629562E64000F5DB5 /* ProgressViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A529562E64000F5DB5 /* ProgressViewCustom.swift */; };
 		F2B747A8295630E8000F5DB5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */; };
+		F2B747AA295641A4000F5DB5 /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747A9295641A4000F5DB5 /* BaseProtocol.swift */; };
+		F2B747AD295641EA000F5DB5 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = F2B747AC295641EA000F5DB5 /* loader.json */; };
+		F2B747AF2956456F000F5DB5 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747AE2956456F000F5DB5 /* HomeEntity.swift */; };
+		F2B747B22956463A000F5DB5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B747B12956463A000F5DB5 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		F2B747A229562E27000F5DB5 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		F2B747A529562E64000F5DB5 /* ProgressViewCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewCustom.swift; sourceTree = "<group>"; };
 		F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		F2B747A9295641A4000F5DB5 /* BaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		F2B747AC295641EA000F5DB5 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		F2B747AE2956456F000F5DB5 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		F2B747B12956463A000F5DB5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				F20D43AE29560A4C00FBDDF3 /* AppDelegate.swift */,
+				F2B747B02956462E000F5DB5 /* Utils */,
+				F2B747AB295641C6000F5DB5 /* Animations */,
 				F2B747A429562E52000F5DB5 /* Commons */,
 				F2B747A129562E17000F5DB5 /* Base */,
 				F2B7479E29562BD9000F5DB5 /* Constants */,
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				F20D43C529560A9200FBDDF3 /* HomePresenter.swift */,
+				F2B747AE2956456F000F5DB5 /* HomeEntity.swift */,
 				F20D43C629560A9200FBDDF3 /* HomeRouter.swift */,
 				F20D43C729560A9200FBDDF3 /* HomeInteractor.swift */,
 				F20D43C829560A9200FBDDF3 /* HomeProtocol.swift */,
@@ -163,6 +174,7 @@
 		F2B747A129562E17000F5DB5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F2B747A9295641A4000F5DB5 /* BaseProtocol.swift */,
 				F2B747A229562E27000F5DB5 /* BaseController.swift */,
 			);
 			path = Base;
@@ -175,6 +187,22 @@
 				F2B747A7295630E8000F5DB5 /* PersistenceManager.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		F2B747AB295641C6000F5DB5 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F2B747AC295641EA000F5DB5 /* loader.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F2B747B02956462E000F5DB5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F2B747B12956463A000F5DB5 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FC7F1BAB60A5516E24EFEFF0 /* Pods */ = {
@@ -247,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20D43BB29560A4E00FBDDF3 /* LaunchScreen.storyboard in Resources */,
+				F2B747AD295641EA000F5DB5 /* loader.json in Resources */,
 				F20D43B829560A4E00FBDDF3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B747AA295641A4000F5DB5 /* BaseProtocol.swift in Sources */,
 				F2B747A629562E64000F5DB5 /* ProgressViewCustom.swift in Sources */,
 				F2B7479A29562804000F5DB5 /* RegisterProtocol.swift in Sources */,
 				F2B7479D29562980000F5DB5 /* RegisterEntity.swift in Sources */,
@@ -314,6 +344,8 @@
 				F2B747A8295630E8000F5DB5 /* PersistenceManager.swift in Sources */,
 				F2B7479929562804000F5DB5 /* RegisterInteractor.swift in Sources */,
 				F20D43CE29560A9200FBDDF3 /* HomeProtocol.swift in Sources */,
+				F2B747B22956463A000F5DB5 /* Utils.swift in Sources */,
+				F2B747AF2956456F000F5DB5 /* HomeEntity.swift in Sources */,
 				F20D43AF29560A4C00FBDDF3 /* AppDelegate.swift in Sources */,
 				F2B747A329562E27000F5DB5 /* BaseController.swift in Sources */,
 				F2B7479B29562804000F5DB5 /* RegisterVC.swift in Sources */,
